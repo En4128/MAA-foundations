@@ -29,7 +29,7 @@ const About = () => (
     <div style={{ position: 'absolute', bottom: 0, left: 0, width: '400px', height: '400px', background: 'rgba(232,213,181,0.05)', borderRadius: '50%', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
     <div style={S.container}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '64px', alignItems: 'center' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '64px', alignItems: 'center' }}>
 
         {/* ── Left: Images ── */}
         <motion.div
@@ -113,7 +113,7 @@ const About = () => (
           </p>
 
           {/* Checkmarks */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '40px' }}>
             {[
               '100% Private Oceanfront Villas',
               'Michelin-Inspired Gastronomy',

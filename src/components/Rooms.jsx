@@ -29,7 +29,7 @@ const Rooms = () => {
         </div>
 
         {/* Room Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '32px' }}>
           {roomsData.map((room, index) => (
             <motion.div
               key={room.id}

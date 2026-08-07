@@ -28,7 +28,7 @@ const Restaurant = () => (
       </div>
 
       {/* ── Dining Venue Cards ── */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))', gap:'28px', marginBottom:'72px' }}>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'28px', marginBottom:'72px' }}>
         {diningData.highlights.map((venue, idx) => (
           <motion.div
             key={venue.name}
