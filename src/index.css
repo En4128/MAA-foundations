@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LUXURY LIGHT PALETTE
+   Burnished Gold · Warm Ivory · Champagne Cream · Warm Sand
+   ============================================================ */
+@theme {
+  --color-resort-gold:        #C4956A;   /* Burnished Gold (primary)  */
+  --color-resort-gold-dark:   #A8784E;   /* Deep Warm Gold            */
+  --color-resort-gold-light:  #DDB98A;   /* Light Champagne           */
+  --color-resort-champagne:   #E8D5B5;   /* Champagne Cream (accent)  */
+  --color-resort-ivory:       #FEFCF8;   /* Pure Ivory (main BG)      */
+  --color-resort-cream:       #F7F1E8;   /* Warm Cream (alt BG)       */
+  --color-resort-sand:        #EDE3D4;   /* Warm Sand (section BG)    */
+  --color-resort-sand-mid:    #DDD0C0;   /* Medium Sand (cards/footer)*/
+  --color-resort-brown:       #2C2416;   /* Warm Dark Brown (text)    */
+  --color-resort-brown-mid:   #6B5A45;   /* Medium Brown (sub-text)   */
+  --color-resort-brown-light: #9B8878;   /* Light Taupe               */
+  --color-resort-border:      #E2D0BA;   /* Warm Cream Border         */
+
+  --font-family-serif:  "Playfair Display", Georgia, serif;
+  --font-family-sans:   "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-family-accent: "Cormorant Garamond", serif;
+
+  --shadow-luxury:       0 20px 40px -15px rgba(196,149,106,0.15);
+  --shadow-luxury-hover: 0 30px 60px -12px rgba(196,149,106,0.25);
+  --shadow-gold-glow:    0 10px 30px -5px  rgba(196,149,106,0.40);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #FEFCF8;
+    color: #2C2416;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 7px; }
+  ::-webkit-scrollbar-track { background: #F7F1E8; }
+  ::-webkit-scrollbar-thumb { background: #C4956A; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #A8784E; }
+  ::selection { background-color: #E8D5B5; color: #2C2416; }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+
+  /* Glassmorphism — warm ivory tint */
+  .glass-card {
+    background: rgba(254,252,248,0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226,208,186,0.60);
+  }
+
+  /* Medium-light panel — warm sand */
+  .glass-dark {
+    background: rgba(237,227,212,0.80);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(196,149,106,0.25);
+  }
+
+  .glass-nav {
+    background: rgba(254,252,248,0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(196,149,106,0.18);
+  }
+
+  /* Shadows */
+  .shadow-luxury       { box-shadow: 0 20px 40px -15px rgba(196,149,106,0.15); }
+  .shadow-luxury-hover { box-shadow: 0 30px 60px -12px rgba(196,149,106,0.25); }
+  .shadow-gold-glow    { box-shadow: 0 10px 30px -5px  rgba(196,149,106,0.40); }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #C4956A 0%, #E8D5B5 50%, #A8784E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Background gradients */
+  .bg-gold-gradient  { background: linear-gradient(135deg,#C4956A 0%,#DDB98A 50%,#A8784E 100%); }
+  .bg-warm-gradient  { background: linear-gradient(135deg,#EDE3D4 0%,#F7F1E8 100%); }
+
+  /* Hero overlay — warm medium for video readability */
+  .hero-overlay {
+    background: linear-gradient(to top,
+      rgba(44,36,22,0.82)  0%,
+      rgba(44,36,22,0.40)  50%,
+      rgba(0,0,0,0.25)     100%);
+  }
+
+  .font-serif  { font-family: "Playfair Display", Georgia, serif; }
+  .font-accent { font-family: "Cormorant Garamond", serif; }
+  .font-sans   { font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+}
+
+/* ============================================================
+   SWIPER OVERRIDES
+   ============================================================ */
+.swiper-pagination-bullet {
+  width: 10px !important; height: 10px !important;
+  background: #C4956A !important; opacity: 0.35 !important;
+  transition: all 0.3s ease !important;
+}
+.swiper-pagination-bullet-active {
+  width: 28px !important; border-radius: 6px !important;
+  background: #A8784E !important; opacity: 1 !important;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: #C4956A !important;
+  background: rgba(254,252,248,0.95) !important;
+  width: 48px !important; height: 48px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 16px rgba(196,149,106,0.25) !important;
+  transition: all 0.3s ease !important;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 16px !important; font-weight: 700 !important;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background: #C4956A !important; color: #FEFCF8 !important;
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.w-13 { width: 3.25rem; }
+.h-13 { height: 3.25rem; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.5s ease forwards; }
