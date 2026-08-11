@@ -1,12 +1,19 @@
+import imgDSC2035 from '../assets/DSC_2035.JPG';
+import imgDSC2038 from '../assets/DSC_2038.JPG';
+import imgDSC2047 from '../assets/DSC_2047.JPG';
+import imgDSC2048 from '../assets/DSC_2048.JPG';
+import imgDSC2057 from '../assets/DSC_2057.JPG';
+import imgWhatsapp from '../assets/WhatsApp Image 2026-08-10 at 7.22.48 PM.jpeg';
+
 export const resortInfo = {
-  name: "MAA Foundations",
-  tagline: "A Sanctuary of Timeless Luxury & Tranquility",
-  shortDesc: "Nestled between pristine tropical coastlines and emerald pine valleys, MAA Foundations offers an unparalleled 5-star sanctuary where bespoke hospitality meets untouched natural beauty.",
-  phone: "+91 98765 43210",
-  displayPhone: "+91 98765 43210",
-  whatsappNumber: "919876543210",
-  email: "concierge@maafoundations.com",
-  address: "7400 Coastal Sanctuary Way, Haven Bay, Paradise Coast 90210",
+  name: "MAA Resort",
+  tagline: "Rooted in Nature. Covered in Luxury",
+  shortDesc: "Set between the mountains and the Framing, MAA Resort is a quiet corner of the world where nature is breathtaking and every comfort is taken care of",
+  phone: "+91 9611225842",
+  displayPhone: "+91 9611225842",
+  whatsappNumber: "919611225842",
+  email: " maaresorts@gmail.com",
+  address: "Angaalaparameshwari Temple, Munjurpattu, Kollaimedu Erikarai, Post Munjurpattu - 632 057",
   workingHours: "24/7 Butler & Front Desk Concierge Service",
 };
 
@@ -273,59 +280,57 @@ export const eventsData = [
 export const galleryData = [
   {
     id: 1,
-    title: "Infinity Sunset Pool",
+    title: "Heritage Courtyard & Grand Entry",
     category: "Resort",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
-    tag: "Aerial View"
+    image: imgDSC2035,
+    tag: "Resort Architecture",
+    description: "Stunning architectural facade with warm ambient lighting, hand-carved pillars, and expansive serene courtyards.",
+    aspectRatio: "aspect-[4/3]"
   },
   {
     id: 2,
-    title: "Royal Suite Bedroom",
+    title: "Royal Suite Sanctuary",
     category: "Rooms",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-    tag: "Luxury Interior"
+    image: imgDSC2047,
+    tag: "Luxury Interior",
+    description: "Palatial room interiors crafted with opulent decor, plush bedding, and soothing warm lighting.",
+    aspectRatio: "aspect-[3/4]"
   },
   {
     id: 3,
-    title: "Overwater Seafood Grill",
+    title: "Bespoke Dining Pavilion",
     category: "Restaurant",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
-    tag: "Fine Dining"
+    image: imgDSC2048,
+    tag: "Fine Dining",
+    description: "An elegant dining venue designed for unforgettable culinary experiences and private gourmet gatherings.",
+    aspectRatio: "aspect-[4/3]"
   },
   {
     id: 4,
-    title: "Oceanfront Wedding Canopy",
-    category: "Events",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
-    tag: "Celebrations"
+    title: "Lobby Lounge & Heritage Manor",
+    category: "Resort",
+    image: imgDSC2038,
+    tag: "Grand Foyer",
+    description: "Warm, welcoming heritage aesthetics blended with world-class 5-star hospitality architecture.",
+    aspectRatio: "aspect-[16/10]"
   },
   {
     id: 5,
-    title: "Botanical Pine Valley Trail",
+    title: "Garden Promenade & Nature Vista",
     category: "Nature",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
-    tag: "Resort Landscape"
+    image: imgDSC2057,
+    tag: "Resort Landscape",
+    description: "Manicured gardens, lush green surrounding foliage, and tranquil walkways across the sanctuary.",
+    aspectRatio: "aspect-[4/3]"
   },
   {
     id: 6,
-    title: "Private Jacuzzi Villa Deck",
-    category: "Rooms",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-    tag: "Private Villa"
-  },
-  {
-    id: 7,
-    title: "Underground Wine Sanctuary",
-    category: "Restaurant",
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85",
-    tag: "Wine Cellar"
-  },
-  {
-    id: 8,
-    title: "Holistic Wellness Spa Pavilion",
-    category: "Resort",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85",
-    tag: "Spa & Rejuvenation"
+    title: "Grand Celebration & Banquet Lawn",
+    category: "Events",
+    image: imgWhatsapp,
+    tag: "Royal Celebrations",
+    description: "Picturesque event spaces ideal for royal weddings, galas, and memorable milestone celebrations.",
+    aspectRatio: "aspect-[16/9]"
   }
 ];
 

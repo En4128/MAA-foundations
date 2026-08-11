@@ -18,13 +18,13 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 mb-3">
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#E8D5B5] font-bold">
+            <span className="w-8 h-[2px] bg-[#5E7B52]" />
+            <span className="text-xs uppercase tracking-[0.25em] text-[#5E7B52] font-bold">
               GET IN TOUCH
             </span>
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
+            <span className="w-8 h-[2px] bg-[#5E7B52]" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#C4956A] leading-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#3E5C35] leading-tight mb-4">
             Connect With Our Concierge
           </h2>
           <p className="text-base text-gray-600 font-light leading-relaxed">
@@ -44,14 +44,14 @@ const Contact = () => {
             className="lg:col-span-6 bg-[#F8F8F8] p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-luxury flex flex-col justify-between"
           >
             <div>
-              <h3 className="font-serif text-2xl font-bold text-[#C4956A] mb-6 border-b border-gray-200 pb-4">
+              <h3 className="font-serif text-2xl font-bold text-[#3E5C35] mb-6 border-b border-gray-200 pb-4">
                 Resort Direct Information
               </h3>
 
               <div className="space-y-6 mb-8">
                 {/* Address */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#C4956A] text-[#E8D5B5] flex items-center justify-center text-xl shrink-0 shadow-md">
+                  <div className="w-12 h-12 rounded-2xl bg-[#5E7B52] text-white flex items-center justify-center text-xl shrink-0 shadow-md">
                     <FaMapMarkerAlt />
                   </div>
                   <div>
@@ -66,14 +66,14 @@ const Contact = () => {
 
                 {/* Phone */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#C4956A] text-[#E8D5B5] flex items-center justify-center text-xl shrink-0 shadow-md">
+                  <div className="w-12 h-12 rounded-2xl bg-[#5E7B52] text-white flex items-center justify-center text-xl shrink-0 shadow-md">
                     <FaPhoneAlt />
                   </div>
                   <div>
                     <h4 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-1">
                       24/7 Concierge Hotline
                     </h4>
-                    <p className="text-sm font-bold text-[#C4956A] leading-relaxed">
+                    <p className="text-sm font-bold text-[#3E5C35] leading-relaxed">
                       {resortInfo.displayPhone}
                     </p>
                   </div>
@@ -81,7 +81,7 @@ const Contact = () => {
 
                 {/* Email */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#C4956A] text-[#E8D5B5] flex items-center justify-center text-xl shrink-0 shadow-md">
+                  <div className="w-12 h-12 rounded-2xl bg-[#5E7B52] text-white flex items-center justify-center text-xl shrink-0 shadow-md">
                     <FaEnvelope />
                   </div>
                   <div>
@@ -96,7 +96,7 @@ const Contact = () => {
 
                 {/* Working Hours */}
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#C4956A] text-[#E8D5B5] flex items-center justify-center text-xl shrink-0 shadow-md">
+                  <div className="w-12 h-12 rounded-2xl bg-[#5E7B52] text-white flex items-center justify-center text-xl shrink-0 shadow-md">
                     <FaClock />
                   </div>
                   <div>
@@ -115,7 +115,7 @@ const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-gray-200">
               {/* WhatsApp Button */}
               <a
-                href={`https://wa.me/${resortInfo.whatsappNumber}?text=Hello%20Aura%20Haven%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20stay.`}
+                href={`https://wa.me/${resortInfo.whatsappNumber.replace(/\D/g, '')}?text=Hello%20MAA%20Resort%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-3.5 px-6 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center space-x-2 shadow-md transition-all transform hover:-translate-y-0.5"
@@ -127,7 +127,7 @@ const Contact = () => {
               {/* Call Now Button */}
               <a
                 href={`tel:${resortInfo.phone}`}
-                className="py-3.5 px-6 rounded-full bg-[#C4956A] hover:bg-[#E8D5B5] text-[#E8D5B5] hover:text-[#C4956A] font-bold text-xs uppercase tracking-widest flex items-center justify-center space-x-2 shadow-md transition-all transform hover:-translate-y-0.5"
+                className="py-3.5 px-6 rounded-full bg-[#5E7B52] hover:bg-[#3E5C35] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center space-x-2 shadow-md transition-all transform hover:-translate-y-0.5"
               >
                 <FaPhoneAlt className="text-sm" />
                 <span>Call Concierge</span>
@@ -144,19 +144,20 @@ const Contact = () => {
             className="lg:col-span-6 min-h-[400px] rounded-3xl overflow-hidden shadow-luxury border-4 border-white relative bg-gray-100"
           >
             <iframe
-              title="MAA Foundations Luxury Resort Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.5076401796571!3d37.75781499660972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus"
-              className="w-full h-full min-h-[450px] border-0 filter contrast-105 opacity-90"
+              title="MAA Resort Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3890.2318121652374!2d79.15137920000001!3d12.8282916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s12%C2%B049'41.9%22N+79%C2%B009'14.2%22E!5e0!3m2!1sen!2sin!4v1720000000000!5m2!1sen!2sin"
+              className="w-full h-full min-h-[450px] border-0 opacity-95"
               allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
             
             {/* Map Overlay Badge */}
             <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-2xl shadow-lg border border-gray-100 flex items-center space-x-3">
-              <FaCompass className="text-[#E8D5B5] text-xl" />
+              <FaCompass className="text-[#5E7B52] text-xl" />
               <div>
-                <p className="text-xs font-bold text-[#C4956A] uppercase tracking-wider">Coordinates</p>
-                <p className="text-[11px] text-gray-500 font-mono">37.7578° N, 122.5076° W</p>
+                <p className="text-xs font-bold text-[#5E7B52] uppercase tracking-wider">Location</p>
+                <p className="text-[11px] text-gray-500 font-mono">12.8283° N, 79.1540° E</p>
               </div>
             </div>
           </motion.div>

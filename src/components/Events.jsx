@@ -11,13 +11,13 @@ const Events = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 mb-3">
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#E8D5B5] font-bold">
+            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
+            <span className="text-xs uppercase tracking-[0.25em] text-[#DCE5D7] font-bold">
               CELEBRATE IN ELEGANCE
             </span>
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
+            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#C4956A] leading-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#5E7B52] leading-tight mb-4">
             Banquet & Royal Events
           </h2>
           <p className="text-base text-gray-600 font-light leading-relaxed">
@@ -46,7 +46,7 @@ const Events = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent sm:hidden" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-[#C4956A] text-[#E8D5B5] text-xs font-semibold uppercase tracking-wider shadow">
+                  <span className="px-3 py-1 rounded-full bg-[#5E7B52] text-[#DCE5D7] text-xs font-semibold uppercase tracking-wider shadow">
                     {event.category}
                   </span>
                 </div>
@@ -55,10 +55,10 @@ const Events = () => {
               {/* Event Info */}
               <div className="sm:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-full bg-[#E8D5B5]/20 text-[#C4956A] flex items-center justify-center text-lg mb-4">
+                  <div className="w-10 h-10 rounded-full bg-[#DCE5D7]/20 text-[#5E7B52] flex items-center justify-center text-lg mb-4">
                     <FaGlassCheers />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#C4956A] mb-3 group-hover:text-[#E8D5B5] transition-colors">
+                  <h3 className="font-serif text-2xl font-bold text-[#5E7B52] mb-3 group-hover:text-[#DCE5D7] transition-colors">
                     {event.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed mb-6">
@@ -68,7 +68,7 @@ const Events = () => {
 
                 <a
                   href="#contact"
-                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#C4956A] hover:text-[#E8D5B5] transition-colors"
+                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-[#5E7B52] hover:text-[#DCE5D7] transition-colors"
                 >
                   <span>Plan Your Event</span>
                   <FaChevronRight className="text-[10px] transform group-hover:translate-x-1 transition-transform" />

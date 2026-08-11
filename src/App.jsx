@@ -19,7 +19,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative min-h-screen bg-[#FEFCF8] text-[#2B2B2B] overflow-x-hidden selection:bg-[#E8D5B5] selection:text-[#A8784E]">
+    <div className="relative min-h-screen bg-[#FEFCF8] text-[#2B2B2B] overflow-x-hidden selection:bg-[#DCE5D7] selection:text-[#3E5C35]">
       {/* 0. Preloader Splash Animation */}
       <Preloader onFinish={() => setLoading(false)} />
 

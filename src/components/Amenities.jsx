@@ -31,14 +31,14 @@ const Amenities = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 mb-3">
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#E8D5B5] font-bold">
+            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
+            <span className="text-xs uppercase tracking-[0.25em] text-[#DCE5D7] font-bold">
               UNRIVALLED COMFORTS
             </span>
-            <span className="w-8 h-[2px] bg-[#E8D5B5]" />
+            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#C4956A] leading-tight mb-4">
-            5-Star Resort Amenities
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#5E7B52] leading-tight mb-4">
+            5-Star Resort Comforts
           </h2>
           <p className="text-base text-gray-600 font-light leading-relaxed">
             Every convenience designed for complete tranquility. Experience bespoke services tailored to elevate your retreat into an extraordinary experience.
@@ -57,16 +57,16 @@ const Amenities = () => {
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="glass-card p-8 rounded-3xl border border-white/80 shadow-luxury hover:shadow-luxury-hover hover:border-[#E8D5B5]/40 transition-all duration-300 flex flex-col justify-between group"
+                className="glass-card p-8 rounded-3xl border border-white/80 shadow-luxury hover:shadow-luxury-hover hover:border-[#DCE5D7]/40 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Icon Frame */}
-                  <div className="w-14 h-14 rounded-2xl bg-[#C4956A]/10 text-[#C4956A] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#C4956A] group-hover:text-[#E8D5B5] transition-all duration-300 shadow-md group-hover:scale-110">
+                  <div className="w-14 h-14 rounded-2xl bg-[#5E7B52]/10 text-[#5E7B52] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#5E7B52] group-hover:text-[#DCE5D7] transition-all duration-300 shadow-md group-hover:scale-110">
                     <IconComp />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl font-bold text-[#C4956A] mb-3 group-hover:text-[#E8D5B5] transition-colors">
+                  <h3 className="font-serif text-xl font-bold text-[#5E7B52] mb-3 group-hover:text-[#DCE5D7] transition-colors">
                     {item.title}
                   </h3>
 
@@ -77,7 +77,7 @@ const Amenities = () => {
                 </div>
 
                 {/* Subtle Decorative Line */}
-                <div className="mt-6 pt-4 border-t border-gray-200/50 flex items-center justify-between text-[11px] text-[#E8D5B5] font-semibold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-6 pt-4 border-t border-gray-200/50 flex items-center justify-between text-[11px] text-[#DCE5D7] font-semibold tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity">
                   <span>Included Privilege</span>
                   <span>✓</span>
                 </div>

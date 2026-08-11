@@ -9,10 +9,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const Testimonials = () => (
-  <section style={{ padding:'96px 0', background:'#F7F1E8', position:'relative', overflow:'hidden' }}>
+  <section style={{ padding:'96px 0', background:'#FAF8F3', position:'relative', overflow:'hidden' }}>
 
     {/* Ambient blobs */}
-    <div style={{ position:'absolute', top:'10%', right:'5%', width:'320px', height:'320px', borderRadius:'50%', background:'rgba(196,149,106,0.10)', filter:'blur(60px)', pointerEvents:'none' }} />
+    <div style={{ position:'absolute', top:'10%', right:'5%', width:'320px', height:'320px', borderRadius:'50%', background:'rgba(94,123,82,0.10)', filter:'blur(60px)', pointerEvents:'none' }} />
     <div style={{ position:'absolute', bottom:'10%', left:'5%', width:'280px', height:'280px', borderRadius:'50%', background:'rgba(221,185,138,0.12)', filter:'blur(60px)', pointerEvents:'none' }} />
 
     <div style={{ maxWidth:'88rem', margin:'0 auto', padding:'0 24px', position:'relative', zIndex:1 }}>
@@ -20,11 +20,11 @@ const Testimonials = () => (
       {/* Header */}
       <div style={{ textAlign:'center', maxWidth:'700px', margin:'0 auto 64px' }}>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'12px' }}>
-          <div style={{ width:'32px', height:'2px', background:'#C4956A' }} />
-          <span style={{ fontSize:'11px', letterSpacing:'0.25em', textTransform:'uppercase', color:'#C4956A', fontWeight:700 }}>
+          <div style={{ width:'32px', height:'2px', background:'#5E7B52' }} />
+          <span style={{ fontSize:'11px', letterSpacing:'0.25em', textTransform:'uppercase', color:'#5E7B52', fontWeight:700 }}>
             Guest Stories & Experiences
           </span>
-          <div style={{ width:'32px', height:'2px', background:'#C4956A' }} />
+          <div style={{ width:'32px', height:'2px', background:'#5E7B52' }} />
         </div>
         <h2 style={{ fontFamily:'"Playfair Display",Georgia,serif', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:700, color:'#2C2416', lineHeight:1.2, marginBottom:'16px' }}>
           Words From Our Honored Guests
@@ -49,10 +49,10 @@ const Testimonials = () => (
             <SwiperSlide key={item.id}>
               <div style={{
                 background:'#FEFCF8',
-                border:'1px solid #E2D0BA',
+                border:'1px solid rgba(94,123,82,0.18)',
                 borderRadius:'24px',
                 padding:'36px 32px',
-                boxShadow:'0 16px 40px rgba(196,149,106,0.10)',
+                boxShadow:'0 16px 40px rgba(94,123,82,0.10)',
                 minHeight:'320px',
                 display:'flex',
                 flexDirection:'column',
@@ -60,17 +60,17 @@ const Testimonials = () => (
                 position:'relative',
                 transition:'box-shadow 0.3s ease, transform 0.3s ease',
               }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow='0 24px 56px rgba(196,149,106,0.20)'; e.currentTarget.style.transform='translateY(-4px)'; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow='0 16px 40px rgba(196,149,106,0.10)'; e.currentTarget.style.transform='translateY(0)'; }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow='0 24px 56px rgba(94,123,82,0.20)'; e.currentTarget.style.transform='translateY(-4px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow='0 16px 40px rgba(94,123,82,0.10)'; e.currentTarget.style.transform='translateY(0)'; }}
               >
                 {/* Quote watermark */}
-                <FaQuoteLeft style={{ position:'absolute', top:'24px', right:'24px', fontSize:'2.5rem', color:'rgba(196,149,106,0.12)' }} />
+                <FaQuoteLeft style={{ position:'absolute', top:'24px', right:'24px', fontSize:'2.5rem', color:'rgba(94,123,82,0.12)' }} />
 
                 <div>
                   {/* Stars */}
                   <div style={{ display:'flex', gap:'3px', marginBottom:'18px' }}>
                     {[...Array(item.rating)].map((_,i) => (
-                      <FaStar key={i} style={{ fontSize:'14px', color:'#C4956A' }} />
+                      <FaStar key={i} style={{ fontSize:'14px', color:'#5E7B52' }} />
                     ))}
                   </div>
 
@@ -86,14 +86,14 @@ const Testimonials = () => (
                     src={item.image}
                     alt={item.name}
                     loading="lazy"
-                    style={{ width:'48px', height:'48px', borderRadius:'50%', objectFit:'cover', border:'2px solid #C4956A', boxShadow:'0 4px 12px rgba(196,149,106,0.25)' }}
+                    style={{ width:'48px', height:'48px', borderRadius:'50%', objectFit:'cover', border:'2px solid #5E7B52', boxShadow:'0 4px 12px rgba(94,123,82,0.25)' }}
                   />
                   <div>
                     <div style={{ display:'flex', alignItems:'center', gap:'6px' }}>
                       <span style={{ fontFamily:'"Playfair Display",serif', fontSize:'15px', fontWeight:700, color:'#2C2416' }}>
                         {item.name}
                       </span>
-                      <FaCheckCircle style={{ fontSize:'12px', color:'#C4956A' }} title="Verified Stay" />
+                      <FaCheckCircle style={{ fontSize:'12px', color:'#5E7B52' }} title="Verified Stay" />
                     </div>
                     <p style={{ fontSize:'11px', color:'#9B8878', fontWeight:500, marginTop:'2px' }}>
                       {item.role} · {item.location}

@@ -29,7 +29,7 @@ const RoomDetailModal = ({ room, onClose }) => {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-[#C4956A] text-white flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/40 hover:bg-[#5E7B52] text-white flex items-center justify-center transition-colors"
           >
             <FaTimes className="text-lg" />
           </button>
@@ -43,7 +43,7 @@ const RoomDetailModal = ({ room, onClose }) => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 rounded-full bg-[#C4956A] text-[#E8D5B5] font-semibold text-xs uppercase tracking-wider shadow">
+                <span className="px-3 py-1 rounded-full bg-[#5E7B52] text-[#DCE5D7] font-semibold text-xs uppercase tracking-wider shadow">
                   {room.category}
                 </span>
               </div>
@@ -54,7 +54,7 @@ const RoomDetailModal = ({ room, onClose }) => {
               <div>
                 {/* Rating & Reviews */}
                 <div className="flex items-center space-x-2 text-xs text-gray-500 mb-2">
-                  <div className="flex text-[#E8D5B5]">
+                  <div className="flex text-[#DCE5D7]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} />
                     ))}
@@ -64,13 +64,13 @@ const RoomDetailModal = ({ room, onClose }) => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#C4956A] mb-2">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#5E7B52] mb-2">
                   {room.name}
                 </h3>
 
                 {/* Price */}
                 <div className="flex items-baseline space-x-2 mb-4 pb-4 border-b border-gray-100">
-                  <span className="text-3xl font-bold text-[#E8D5B5] font-serif">{room.price}</span>
+                  <span className="text-3xl font-bold text-[#DCE5D7] font-serif">{room.price}</span>
                   <span className="text-xs uppercase tracking-widest text-gray-500">{room.period}</span>
                 </div>
 
@@ -82,17 +82,17 @@ const RoomDetailModal = ({ room, onClose }) => {
                 {/* Quick Specs */}
                 <div className="grid grid-cols-3 gap-3 p-3 rounded-2xl bg-[#F8F8F8] border border-gray-100 mb-6 text-xs text-gray-700">
                   <div className="flex flex-col items-center text-center">
-                    <FaRulerCombined className="text-[#C4956A] text-base mb-1" />
+                    <FaRulerCombined className="text-[#5E7B52] text-base mb-1" />
                     <span className="font-semibold">{room.size}</span>
                     <span className="text-[10px] text-gray-400 uppercase">Space</span>
                   </div>
                   <div className="flex flex-col items-center text-center border-x border-gray-200">
-                    <FaUsers className="text-[#C4956A] text-base mb-1" />
+                    <FaUsers className="text-[#5E7B52] text-base mb-1" />
                     <span className="font-semibold">{room.capacity}</span>
                     <span className="text-[10px] text-gray-400 uppercase">Guests</span>
                   </div>
                   <div className="flex flex-col items-center text-center">
-                    <FaBed className="text-[#C4956A] text-base mb-1" />
+                    <FaBed className="text-[#5E7B52] text-base mb-1" />
                     <span className="font-semibold">{room.bed}</span>
                     <span className="text-[10px] text-gray-400 uppercase">Bedding</span>
                   </div>
@@ -100,13 +100,13 @@ const RoomDetailModal = ({ room, onClose }) => {
 
                 {/* Amenities List */}
                 <div className="mb-6">
-                  <h4 className="text-xs uppercase tracking-widest font-bold text-[#C4956A] mb-3">
+                  <h4 className="text-xs uppercase tracking-widest font-bold text-[#5E7B52] mb-3">
                     Villa Highlights & Inclusions
                   </h4>
                   <div className="grid grid-cols-2 gap-2 text-xs text-gray-700">
                     {room.amenities.map((item, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
-                        <FaCheckCircle className="text-[#E8D5B5] shrink-0" />
+                        <FaCheckCircle className="text-[#DCE5D7] shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -118,7 +118,7 @@ const RoomDetailModal = ({ room, onClose }) => {
               <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
                 <a
                   href={`tel:${resortInfo.phone}`}
-                  className="flex-1 py-3 px-4 rounded-full bg-[#C4956A] text-[#E8D5B5] font-bold text-xs uppercase tracking-widest text-center hover:bg-[#E8D5B5] hover:text-[#C4956A] transition-all flex items-center justify-center space-x-2 shadow-md"
+                  className="flex-1 py-3 px-4 rounded-full bg-[#5E7B52] text-[#DCE5D7] font-bold text-xs uppercase tracking-widest text-center hover:bg-[#DCE5D7] hover:text-[#5E7B52] transition-all flex items-center justify-center space-x-2 shadow-md"
                 >
                   <FaPhoneAlt />
                   <span>Call to Reserve</span>

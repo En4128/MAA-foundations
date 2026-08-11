@@ -35,7 +35,7 @@ const FloatingActions = () => {
           transition={{ duration: 0.4 }}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
-          href={`https://wa.me/${resortInfo.whatsappNumber}?text=Hello%20Aura%20Haven%20Concierge,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20stay.`}
+          href={`https://wa.me/${resortInfo.whatsappNumber.replace(/\D/g, '')}?text=Hello%20MAA%20Resort%20,%20I%20would%20like%20to%20inquire%20about%20a%20stay.`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
@@ -57,7 +57,7 @@ const FloatingActions = () => {
           whileTap={{ scale: 0.95 }}
           href={`tel:${resortInfo.phone}`}
           aria-label="Call Now"
-          className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#C4956A] text-[#E8D5B5] flex items-center justify-center text-xl shadow-2xl border-2 border-[#E8D5B5] cursor-pointer hover:bg-[#E8D5B5] hover:text-[#C4956A] transition-colors relative group"
+          className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#5E7B52] text-[#DCE5D7] flex items-center justify-center text-xl shadow-2xl border-2 border-[#DCE5D7] cursor-pointer hover:bg-[#DCE5D7] hover:text-[#5E7B52] transition-colors relative group"
         >
           <FaPhoneAlt />
           {/* Tooltip */}
@@ -77,7 +77,7 @@ const FloatingActions = () => {
               whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
               aria-label="Back to Top"
-              className="w-12 h-12 rounded-full bg-white text-[#C4956A] flex items-center justify-center text-lg shadow-xl border border-gray-200 cursor-pointer hover:bg-[#C4956A] hover:text-white transition-colors relative group"
+              className="w-12 h-12 rounded-full bg-white text-[#5E7B52] flex items-center justify-center text-lg shadow-xl border border-gray-200 cursor-pointer hover:bg-[#5E7B52] hover:text-white transition-colors relative group"
             >
               <FaChevronUp />
               <span className="absolute right-16 bg-black/80 text-white text-[11px] font-semibold py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow">
