@@ -21,59 +21,52 @@ const iconMap = {
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-16 sm:py-20 bg-gray-50/50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 mb-3">
-            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#DCE5D7] font-bold">
-              DISTINCTIVE PRIVILEGES
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center space-x-2 mb-2.5">
+            <span className="w-6 h-[2px] bg-[#5E7B52]" />
+            <span className="text-xs uppercase tracking-[0.2em] text-[#5E7B52] font-semibold">
+              ROOTED IN NATURE
             </span>
-            <span className="w-8 h-[2px] bg-[#DCE5D7]" />
+            <span className="w-6 h-[2px] bg-[#5E7B52]" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#5E7B52] leading-tight mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#5E7B52] leading-tight mb-3">
             Why Choose MAA Foundations
           </h2>
-          <p className="text-base text-gray-600 font-light leading-relaxed">
-            Discover what sets our award-winning 5-star haven apart as one of the world's most sought-after luxury destinations.
+          <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+            Set between lush green farmlands and serene mountain ranges, MAA Foundations offers a one-of-a-kind retreat where nature is your closest neighbour.
           </p>
         </div>
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Small & Simple Feature Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {whyChooseUsData.map((item, index) => {
             const IconComp = iconMap[item.icon] || FaCrown;
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-[#F8F8F8] p-8 rounded-3xl border border-gray-100 shadow-luxury hover:shadow-luxury-hover hover:border-[#DCE5D7]/40 transition-all duration-300 group flex flex-col justify-between"
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#5E7B52]/30 transition-all duration-300 group flex items-start space-x-4"
               >
-                <div>
-                  {/* Gold Badge Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-[#5E7B52] text-[#DCE5D7] flex items-center justify-center text-2xl mb-6 group-hover:bg-[#DCE5D7] group-hover:text-[#5E7B52] transition-all duration-300 shadow-md group-hover:scale-110">
-                    <IconComp />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-2xl font-bold text-[#5E7B52] mb-3 group-hover:text-[#DCE5D7] transition-colors">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-                    {item.description}
-                  </p>
+                {/* Compact Icon Box */}
+                <div className="w-11 h-11 rounded-xl bg-[#5E7B52]/10 text-[#5E7B52] flex items-center justify-center text-lg flex-shrink-0 group-hover:bg-[#5E7B52] group-hover:text-white transition-all duration-300 shadow-xs">
+                  <IconComp />
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-gray-200/60 flex items-center justify-between text-xs text-[#5E7B52] font-semibold">
-                  <span>Standard of Excellence</span>
-                  <span className="w-2 h-2 rounded-full bg-[#DCE5D7]" />
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-base font-bold text-[#5E7B52] mb-1 leading-snug group-hover:text-[#4a6340] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 font-light leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             );
@@ -86,3 +79,4 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+

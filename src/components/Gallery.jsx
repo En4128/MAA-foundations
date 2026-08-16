@@ -1,261 +1,204 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-import { FaSearchPlus, FaThLarge, FaExpandAlt, FaImages, FaChevronRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import { galleryData } from '../data/resortData';
 import GalleryModal from './GalleryModal';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+/* ─────────────────────────────────────────────────────────────
+   Card config: varying heights + bottom offsets for organic look
+───────────────────────────────────────────────────────────── */
+const CARD_CONFIGS = [
+  { height: 380, offsetY: 24 },
+  { height: 400, offsetY: 8  },
+  { height: 460, offsetY: 0  },
+  { height: 380, offsetY: 16 },
+  { height: 420, offsetY: 4  },
+  { height: 360, offsetY: 30 },
+];
 
-const categories = ['All', 'Resort', 'Rooms', 'Restaurant', 'Events', 'Nature'];
+/* Duplicate the array so the marquee loops seamlessly */
+const LOOPED = [...galleryData, ...galleryData];
+
+/* CSS keyframe injected once */
+const STYLE = `
+@keyframes gallery-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.gallery-track {
+  animation: gallery-marquee 28s linear infinite;
+  will-change: transform;
+}
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+`;
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'carousel'
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredItems = activeCategory === 'All'
-    ? galleryData
-    : galleryData.filter(item => item.category === activeCategory);
-
   return (
-    <section id="gallery" className="py-24 bg-[#FAF8F5] relative overflow-hidden">
-      {/* Decorative Subtle Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#DCE5D7]/20 rounded-full filter blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#5E7B52]/10 rounded-full filter blur-3xl pointer-events-none" />
+    <section
+      id="gallery"
+      className="relative overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #B9C3B5 0%, #C8D0C3 40%, #BFC8BA 100%)' }}
+    >
+      {/* inject keyframe once */}
+      <style>{STYLE}</style>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-3 mb-3 px-4 py-1.5 rounded-full bg-[#DCE5D7]/25 border border-[#DCE5D7]/50"
-          >
-            <FaImages className="text-[#5E7B52] text-xs" />
-            <span className="text-xs uppercase tracking-[0.25em] text-[#3E5C35] font-bold">
-              VISUAL SANCTUARY • {galleryData.length} PHOTOS
-            </span>
-          </motion.div>
+      {/* subtle noise texture */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+          opacity: 0.035,
+        }}
+      />
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#2B2B2B] leading-tight mb-4"
-          >
-            Resort Photo Gallery
-          </motion.h2>
+      {/* ── Section Heading ── */}
+      <div className="pt-14 pb-4 text-center relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: -12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: 'clamp(2.6rem, 5vw, 4rem)',
+            fontStyle: 'italic',
+            fontWeight: 400,
+            letterSpacing: '0.06em',
+            color: '#2E5E4A',
+            lineHeight: 1,
+          }}
+        >
+          Gallery
+        </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base text-gray-600 font-light leading-relaxed"
-          >
-            Explore our curated collection of luxury villa architecture, tranquil garden paths, royal dining spaces, and unforgettable event venues.
-          </motion.p>
-        </div>
-
-        {/* Controls Bar: Category Filters + View Switcher */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-[#DCE5D7]/40 pb-6">
-          {/* Category Filter Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat;
-              const count = cat === 'All' 
-                ? galleryData.length 
-                : galleryData.filter(i => i.category === cat).length;
-
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`relative px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center space-x-2 ${
-                    isActive
-                      ? 'bg-[#5E7B52] text-white shadow-lg shadow-[#5E7B52]/20 scale-105'
-                      : 'bg-white text-gray-700 hover:bg-[#F3ECE1] border border-gray-200/80 hover:border-[#DCE5D7]'
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span
-                    className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
-                    }`}
-                  >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* View Mode Toggle Switch */}
-          <div className="flex items-center bg-white p-1 rounded-2xl border border-gray-200 shadow-sm">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 ${
-                viewMode === 'grid'
-                  ? 'bg-[#5E7B52] text-white shadow-md'
-                  : 'text-gray-600 hover:text-[#5E7B52]'
-              }`}
-            >
-              <FaThLarge className="text-sm" />
-              <span>Grid View</span>
-            </button>
-            <button
-              onClick={() => setViewMode('carousel')}
-              className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 ${
-                viewMode === 'carousel'
-                  ? 'bg-[#5E7B52] text-white shadow-md'
-                  : 'text-gray-600 hover:text-[#5E7B52]'
-              }`}
-            >
-              <FaImages className="text-sm" />
-              <span>Carousel</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Gallery Content View */}
-        <AnimatePresence mode="wait">
-          {viewMode === 'grid' ? (
-            /* ── GRID VIEW (STAGGERED LUXURY GRID) ── */
-            <motion.div
-              key="grid"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-            >
-              {filteredItems.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  onClick={() => setSelectedImage(item)}
-                  className="group relative h-88 sm:h-96 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-white/60 bg-white cursor-pointer"
-                >
-                  {/* Photo Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    loading="lazy"
-                  />
-
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-
-                  {/* Top Category Badge & Expand Icon */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] text-[#DCE5D7] uppercase tracking-widest font-semibold border border-white/20">
-                      {item.category}
-                    </span>
-                    <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300 border border-white/20">
-                      <FaExpandAlt className="text-xs text-[#DCE5D7]" />
-                    </div>
-                  </div>
-
-                  {/* Bottom Content Caption */}
-                  <div className="absolute bottom-6 left-6 right-6 text-white transform group-hover:-translate-y-1 transition-transform duration-300 z-10">
-                    <span className="text-[11px] text-[#DCE5D7] font-semibold uppercase tracking-wider block mb-1">
-                      {item.tag || item.category}
-                    </span>
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold leading-tight mb-2 group-hover:text-[#DCE5D7] transition-colors">
-                      {item.title}
-                    </h3>
-                    {item.description && (
-                      <p className="text-xs text-gray-300 font-light line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {item.description}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          ) : (
-            /* ── CAROUSEL SLIDER VIEW ── */
-            <motion.div
-              key="carousel"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="relative pb-12"
-            >
-              <Swiper
-                key={activeCategory}
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={28}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
-                breakpoints={{
-                  640: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                className="rounded-3xl p-2"
-              >
-                {filteredItems.map((item) => (
-                  <SwiperSlide key={item.id}>
-                    <div
-                      onClick={() => setSelectedImage(item)}
-                      className="group relative h-96 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-white cursor-pointer transition-all duration-500"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                        loading="lazy"
-                      />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-
-                      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300 border border-white/20">
-                        <FaSearchPlus className="text-sm text-[#DCE5D7]" />
-                      </div>
-
-                      <div className="absolute bottom-6 left-6 right-6 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
-                        <span className="inline-block px-3 py-1 rounded-full bg-[#5E7B52]/80 backdrop-blur-md text-[10px] text-[#DCE5D7] uppercase tracking-widest font-semibold mb-2">
-                          {item.category}
-                        </span>
-                        <h3 className="font-serif text-xl sm:text-2xl font-bold leading-tight">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
+        {/* thin decorative rule */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.25 }}
+          className="mx-auto mt-3 origin-center"
+          style={{ width: 44, height: 1, background: '#2E5E4A', opacity: 0.50 }}
+        />
       </div>
 
-      {/* Lightbox Popup Modal */}
+      {/* ── Infinite Marquee Strip ── */}
+      {/* outer clip — edge fade */}
+      <div
+        className="relative z-10 overflow-hidden"
+        style={{
+          paddingTop: '1.5rem',
+          paddingBottom: '3.5rem',
+          maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+        }}
+      >
+        {/* scrolling track — contains 2× the cards */}
+        <div
+          className="gallery-track flex items-end"
+          style={{ gap: '1rem', width: 'max-content' }}
+        >
+          {LOOPED.map((item, idx) => {
+            const cfg = CARD_CONFIGS[idx % CARD_CONFIGS.length];
+            return (
+              <div
+                key={`${item.id}-${idx}`}
+                onClick={() => setSelectedImage(item)}
+                className="group relative flex-shrink-0"
+                style={{
+                  width: 'clamp(170px, 18vw, 230px)',
+                  height: cfg.height,
+                  marginBottom: cfg.offsetY,
+                  borderRadius: 14,
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  boxShadow: '0 14px 44px rgba(20,40,20,0.22), 0 2px 10px rgba(20,40,20,0.12)',
+                  transition: 'transform 0.32s ease, box-shadow 0.32s ease',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'scale(1.035) translateY(-7px)';
+                  e.currentTarget.style.boxShadow = '0 24px 60px rgba(20,40,20,0.30)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 14px 44px rgba(20,40,20,0.22), 0 2px 10px rgba(20,40,20,0.12)';
+                }}
+              >
+                {/* Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  draggable={false}
+                  className="w-full h-full object-cover transition-transform duration-[1300ms] ease-out group-hover:scale-110"
+                  loading="lazy"
+                />
+
+                {/* Bottom gradient */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-500 opacity-60 group-hover:opacity-90"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(15,28,15,0.80) 0%, rgba(15,28,15,0.12) 55%, transparent 100%)',
+                  }}
+                />
+
+                {/* Category pill */}
+                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span
+                    className="text-white bg-white/20 backdrop-blur-sm border border-white/30 px-3 py-1 rounded-full uppercase"
+                    style={{ fontSize: 9, letterSpacing: '0.18em', fontWeight: 600 }}
+                  >
+                    {item.category}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3
+                    style={{
+                      fontFamily: '"Playfair Display", Georgia, serif',
+                      fontSize: '0.92rem',
+                      fontWeight: 600,
+                      lineHeight: 1.3,
+                      color: '#fff',
+                      textShadow: '0 1px 6px rgba(0,0,0,0.55)',
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="mt-1 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      fontSize: '0.7rem',
+                      color: 'rgba(255,255,255,0.75)',
+                      lineHeight: 1.45,
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ── Lightbox ── */}
       <GalleryModal
-        item={selectedImage}
-        items={filteredItems}
+        isOpen={!!selectedImage}
         onClose={() => setSelectedImage(null)}
-        onSelect={(newItem) => setSelectedImage(newItem)}
+        item={selectedImage}
+        items={galleryData}
+        onSelect={setSelectedImage}
       />
     </section>
   );
 };
 
 export default Gallery;
+
+

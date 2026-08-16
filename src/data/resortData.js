@@ -102,94 +102,56 @@ export const roomsData = [
     gallery: [
       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=85"
     ]
-  },
-  {
-    id: 5,
-    name: "Presidential Family Estate",
-    category: "Family Suite",
-    price: "$1,350",
-    period: "per night",
-    rating: 5.0,
-    reviewsCount: 82,
-    size: "1,850 sq.ft",
-    capacity: "6 Guests",
-    bed: "3 Luxury Bedrooms",
-    view: "Coastal Panorama",
-    image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
-    description: "Extravagant 3-bedroom residence with private dining pavilion, personal chef options, game room, and full infinity pool.",
-    amenities: ["3 Bedrooms", "Private Chef Dining", "Children's Play Lounge", "Infinity Edge Pool", "Valet Service"],
-    gallery: [
-      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85"
-    ]
-  },
-  {
-    id: 6,
-    name: "Royal Honeymoon Overwater Villa",
-    category: "Honeymoon Suite",
-    price: "$1,600",
-    period: "per night",
-    rating: 5.0,
-    reviewsCount: 204,
-    size: "1,400 sq.ft",
-    capacity: "2 Guests",
-    bed: "Custom Royal Canopy Bed",
-    view: "360 Sunset & Sea",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85",
-    description: "Perched over glass-clear lagoon waters. Includes glass floor viewing panels, private infinity plunge pool, sunset dining deck, and romantic spa treatments.",
-    amenities: ["Overwater Deck", "Glass Floor Panel", "Sunset Caviar & Wine", "Couple Spa Included", "Private Yacht Cruise Transfer"],
-    gallery: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
-    ]
   }
 ];
 
 export const diningData = {
-  title: "A Culinary Symphony of Global Flavors",
-  subtitle: "FINE DINING & GASTRONOMY",
-  description: "Curated by Michelin-starred culinary masters, MAA Foundations' four signature restaurants transform local organic harvests and fresh deep-sea seafood into extraordinary dining journeys.",
+  title: "Good Food, Made with Care",
+  subtitle: "DINING & RESTAURANT",
+  description: "Our kitchen is built around fresh, locally grown ingredients. Every dish is prepared with attention and served with warmth — the kind of meal you'll actually remember.",
   highlights: [
     {
-      name: "Le Lagon Seafood & Grill",
-      type: "Overwater Fine Dining",
+      name: "The Riverside Grill",
+      type: "Grill & Seafood",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85",
-      desc: "Fresh line-caught seafood paired with rare international vintages overlooking sunset waters.",
-      timing: "6:00 PM - 11:30 PM"
+      desc: "Fresh fish and grilled favourites served by the water. Simple food done really well.",
+      timing: "6:00 PM – 11:00 PM"
     },
     {
-      name: "Solarium Botanical Lounge",
-      type: "Organic Farm-to-Table",
+      name: "The Garden Cafe",
+      type: "All-Day Breakfast & Lunch",
       image: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=85",
-      desc: "Artisanal plant-forward cuisine handcrafted from our private hillside bio-gardens.",
-      timing: "7:00 AM - 4:00 PM"
+      desc: "Fresh salads, sandwiches and hot meals made from vegetables grown right here on our farm.",
+      timing: "7:00 AM – 4:00 PM"
     },
     {
-      name: "Celeste Cellar & Sommelier Bar",
-      type: "Wine Tasting & Tapas",
+      name: "The Bar & Lounge",
+      type: "Drinks & Light Bites",
       image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85",
-      desc: "An underground reserve cellar featuring over 1,500 vintage wines and curated charcuterie.",
-      timing: "5:00 PM - 1:00 AM"
+      desc: "A relaxed spot for a cold drink, a glass of wine, or a small plate — day or night.",
+      timing: "5:00 PM – 1:00 AM"
     }
   ],
   specialties: [
     {
-      title: "Pan-Seared Glacier Toothfish",
-      category: "Chef Signature",
-      price: "$68",
-      desc: "Infused with saffron broth, baby fennel, and wild sea asparagus.",
+      title: "Grilled Fish of the Day",
+      category: "Chef's Pick",
+      price: "₹680",
+      desc: "Fresh catch from the morning, grilled with herbs and served with rice and salad.",
       image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=85"
     },
     {
-      title: "Wagyu A5 Filet Mignon",
-      category: "Prime Grills",
-      price: "$110",
-      desc: "Miyazaki A5 beef, truffle potato purée, barolo wine reduction.",
+      title: "Farm Chicken Curry",
+      category: "House Special",
+      price: "₹420",
+      desc: "Slow-cooked chicken in a rich, homestyle curry. Best enjoyed with fresh-baked bread.",
       image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85"
     },
     {
-      title: "Artisanal Yuzu Wild Berry Sphere",
-      category: "Pastry Craft",
-      price: "$28",
-      desc: "Valrhona chocolate shell, yuzu curd, gold leaf finish.",
+      title: "Seasonal Fruit Dessert",
+      category: "Dessert",
+      price: "₹220",
+      desc: "A light dessert made with whatever fruit is ripe from the farm that day.",
       image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85"
     }
   ]
@@ -199,50 +161,50 @@ export const amenitiesData = [
   {
     id: 1,
     icon: "FaWifi",
-    title: "Ultra High-Speed Wi-Fi 6",
-    description: "Seamless gigabit fiber coverage across all villas, private beach lounges, and gardens."
+    title: "Free Wi-Fi Everywhere",
+    description: "Stay connected without thinking about it. Fast, reliable Wi-Fi works throughout your room, the pool area, the gardens — everywhere you go."
   },
   {
     id: 2,
     icon: "FaSwimmingPool",
-    title: "Infinity Heated Pools",
-    description: "Two multi-tiered climate-controlled infinity pools with underwater acoustic sound systems."
+    title: "Heated Infinity Pool",
+    description: "Take a dip any time of day. Our warm infinity pools blend right into the horizon — perfect for a morning swim or a relaxing evening float."
   },
   {
     id: 3,
     icon: "FaCar",
-    title: "Valet & Helipad Access",
-    description: "Chauffeur valet parking with Tesla chargers and a private certified helipad."
+    title: "Valet Parking",
+    description: "Pull up, hand us your keys, and walk straight in. We'll take care of your car so you can focus on enjoying your stay from the moment you arrive."
   },
   {
     id: 4,
     icon: "FaUtensils",
-    title: "4 Signature Restaurants",
-    description: "Michelin-inspired gastronomy, in-villa private dining, and sommelier-curated cellars."
+    title: "On-Site Restaurants",
+    description: "Hungry? We've got you covered. Enjoy a sit-down meal at our restaurant or order food straight to your room — good food, whenever you want it."
   },
   {
     id: 5,
     icon: "FaTree",
-    title: "Botanical Zen Gardens",
-    description: "12 acres of tranquil bamboo groves, lotus ponds, and private yoga pavilions."
+    title: "Nature Walks & Gardens",
+    description: "Step outside and breathe in the fresh air. Wander through 12 acres of peaceful greenery, quiet pathways, and beautiful views all around you."
   },
   {
     id: 6,
     icon: "FaChild",
-    title: "Kids & Family Oasis",
-    description: "Supervised junior explorer club, water splash pad, and creative arts academy."
+    title: "Fun Zone for Kids",
+    description: "Kids will love it here. There's a safe, supervised play area with games, activities, and splash pads — so little ones have a great time too."
   },
   {
     id: 7,
     icon: "FaSnowflake",
-    title: "Smart Climate Control",
-    description: "Individual room temperature, air purification, and bio-friendly mood lighting control."
+    title: "Room Climate Control",
+    description: "Too warm? Too cold? No problem. Adjust the temperature in your room exactly how you like it — your comfort is completely in your hands."
   },
   {
     id: 8,
     icon: "FaConciergeBell",
-    title: "24×7 Personal Butler",
-    description: "Dedicated butler service for unpacking, reservations, excursions, and custom desires."
+    title: "24/7 Staff Assistance",
+    description: "Need anything at any hour? Our team is always available. Whether it's an extra pillow, a restaurant booking, or local tips — just ask."
   }
 ];
 
@@ -280,7 +242,7 @@ export const eventsData = [
 export const galleryData = [
   {
     id: 1,
-    title: "Heritage Courtyard & Grand Entry",
+    
     category: "Resort",
     image: imgDSC2035,
     tag: "Resort Architecture",
@@ -289,7 +251,7 @@ export const galleryData = [
   },
   {
     id: 2,
-    title: "Royal Suite Sanctuary",
+    
     category: "Rooms",
     image: imgDSC2047,
     tag: "Luxury Interior",
@@ -298,7 +260,7 @@ export const galleryData = [
   },
   {
     id: 3,
-    title: "Bespoke Dining Pavilion",
+    
     category: "Restaurant",
     image: imgDSC2048,
     tag: "Fine Dining",
@@ -307,7 +269,7 @@ export const galleryData = [
   },
   {
     id: 4,
-    title: "Lobby Lounge & Heritage Manor",
+    
     category: "Resort",
     image: imgDSC2038,
     tag: "Grand Foyer",
@@ -316,7 +278,7 @@ export const galleryData = [
   },
   {
     id: 5,
-    title: "Garden Promenade & Nature Vista",
+    
     category: "Nature",
     image: imgDSC2057,
     tag: "Resort Landscape",
@@ -325,7 +287,7 @@ export const galleryData = [
   },
   {
     id: 6,
-    title: "Grand Celebration & Banquet Lawn",
+    
     category: "Events",
     image: imgWhatsapp,
     tag: "Royal Celebrations",
@@ -338,38 +300,38 @@ export const whyChooseUsData = [
   {
     id: 1,
     icon: "FaMapMarkedAlt",
-    title: "Peaceful Secluded Location",
-    description: "Tucked away in a pristine private cove away from city bustle, offering maximum serenity and clear starry nights."
+    title: "Nestled Between Farm & Mountain",
+    description: "Uniquely positioned between lush green farmlands and majestic mountain ranges — wake up to misty hills and breathe the freshest air nature has to offer."
   },
   {
     id: 2,
     icon: "FaCrown",
-    title: "World-Class Luxury Stay",
-    description: "Crafted with imported Italian marble, Egyptian cotton linens, hand-carved teak furnishings, and state-of-the-art tech."
+    title: "Mountain Views From Every Room",
+    description: "Every villa and room is thoughtfully oriented to frame sweeping mountain vistas, so you enjoy the grandeur of nature from the comfort of your bed."
   },
   {
     id: 3,
     icon: "FaGlassMartiniAlt",
-    title: "Michelin-Grade Culinary",
-    description: "Four distinct dining venues led by international master chefs using locally harvested organic ingredients."
+    title: "Farm-Fresh Organic Dining",
+    description: "Our kitchen is fed by the farmlands right at our doorstep — every meal is crafted from freshly harvested organic produce grown without chemicals or preservatives."
   },
   {
     id: 4,
     icon: "FaUserCheck",
-    title: "Dedicated Butler Hospitality",
-    description: "Intuitive, warm hospitality that anticipates your every wish with a 1-to-1 guest-to-staff ratio."
+    title: "Walk the Farms Yourself",
+    description: "Step into the green fields and pick your own fruits, vegetables, and herbs. An immersive farm-walk experience that reconnects you with the earth."
   },
   {
     id: 5,
     icon: "FaGem",
-    title: "Transparent Unrivalled Value",
-    description: "All-inclusive luxury with zero hidden costs, complimentary airport luxury transfers, and daily spa credits."
+    title: "Nature Trails & Hill Paths",
+    description: "Explore guided nature trails that wind through flowering farmlands and climb gently into the scenic foothills — a walker's paradise at every season."
   },
   {
     id: 6,
     icon: "FaShieldAlt",
-    title: "Safe, Secure & Private",
-    description: "24/7 biometric security access, private villa gated entries, and confidential vip concierge handling."
+    title: "A True Escape From City Life",
+    description: "No traffic, no noise, no pollution — only birdsong, cool mountain breeze, and the earthy scent of freshly tilled soil. Recharge completely in nature's lap."
   }
 ];
 
@@ -424,10 +386,6 @@ export const faqData = [
   {
     question: "Is high-speed Wi-Fi included throughout the property?",
     answer: "Yes, ultra-high-speed Wi-Fi 6 is available completely free of charge across all guest villas, private sun decks, infinity pools, and dining pavilions."
-  },
-  {
-    question: "Do you host oceanfront weddings and grand celebrations?",
-    answer: "We specialize in royal oceanfront weddings, gala galas, and high-profile corporate retreats. Our dedicated master event planners handle everything from floral decor to Michelin-crafted customized menus."
   },
   {
     question: "What is your policy on outside food and dietary preferences?",

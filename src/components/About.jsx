@@ -1,11 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaSmileBeam, FaAward, FaHotel, FaStar, FaCheckCircle } from 'react-icons/fa';
-import { statistics } from '../data/resortData';
+import { FaCheckCircle } from 'react-icons/fa';
 import aboutAerial from '../assets/about_aerial.jpg';
 import aboutNight from '../assets/about_night.jpg';
 
-const statIconMap = { FaSmileBeam, FaAward, FaHotel, FaStar };
 
 const S = {
   section: { padding: '96px 0', background: '#F8F8F8', position: 'relative', overflow: 'hidden' },
@@ -154,51 +152,6 @@ const About = () => (
         </motion.div>
       </div>
 
-      {/* ── Statistics ── */}
-      <div style={{ marginTop: '80px', paddingTop: '48px', borderTop: '1px solid rgba(0,0,0,0.07)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
-          {statistics.map((stat, index) => {
-            const IconComp = statIconMap[stat.icon] || FaStar;
-            return (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.12 }}
-                style={{
-                  background: 'rgba(255,255,255,0.78)',
-                  backdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255,255,255,0.5)',
-                  padding: '32px 24px',
-                  borderRadius: '20px',
-                  textAlign: 'center',
-                  boxShadow: '0 20px 40px -15px rgba(0,0,0,0.07)',
-                  transition: 'box-shadow 0.3s ease, transform 0.3s ease',
-                  cursor: 'default',
-                }}
-                whileHover={{ y: -6 }}
-              >
-                <div style={{
-                  width: '48px', height: '48px', margin: '0 auto 16px',
-                  borderRadius: '12px', background: 'rgba(94,123,82,0.08)',
-                  color: '#5E7B52', display: 'flex', alignItems: 'center',
-                  justifyContent: 'center', fontSize: '20px',
-                  transition: 'background 0.3s ease',
-                }}>
-                  <IconComp />
-                </div>
-                <div style={{ fontFamily: '"Playfair Display", serif', fontSize: '2.2rem', fontWeight: 700, color: '#5E7B52', marginBottom: '4px' }}>
-                  {stat.value.toLocaleString()}{stat.suffix}
-                </div>
-                <p style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#888', fontWeight: 600 }}>
-                  {stat.label}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
     </div>
   </section>
 );

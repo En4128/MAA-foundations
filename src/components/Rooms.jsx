@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaStar, FaBed, FaRulerCombined, FaUsers, FaArrowRight } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaStar, FaBed, FaRulerCombined, FaUsers, FaArrowRight, FaLeaf } from 'react-icons/fa';
 import { roomsData } from '../data/resortData';
 import RoomDetailModal from './RoomDetailModal';
 
@@ -8,140 +8,113 @@ const Rooms = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
 
   return (
-    <section id="rooms" style={{ padding: '96px 0', background: '#ffffff' }}>
-      <div style={{ maxWidth: '88rem', margin: '0 auto', padding: '0 24px' }}>
+    <section id="rooms" className="py-16 sm:py-24 bg-[#F7F8F4] relative overflow-hidden">
+      {/* Decorative Natural Ambient Blurs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#5E7B52]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-[#DCE5D7]/40 rounded-full blur-[100px] pointer-events-none" />
 
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 64px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '12px' }}>
-            <div style={{ width: '32px', height: '2px', background: '#DCE5D7' }} />
-            <span style={{ fontSize: '11px', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#DCE5D7', fontWeight: 700 }}>
-              Accommodations & Suites
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center space-x-2 mb-3">
+            <span className="w-8 h-[1px] bg-[#5E7B52]" />
+            <span className="text-xs uppercase tracking-[0.2em] text-[#5E7B52] font-semibold flex items-center gap-1.5">
+              <FaLeaf className="text-[10px]" /> ACCOMMODATIONS & STAY
             </span>
-            <div style={{ width: '32px', height: '2px', background: '#DCE5D7' }} />
+            <span className="w-8 h-[1px] bg-[#5E7B52]" />
           </div>
-          <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 700, color: '#5E7B52', lineHeight: 1.2, marginBottom: '16px' }}>
-            Sanctuaries of Pure Opulence
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#2D3B27] leading-tight mb-4">
+            Sanctuaries Rooted in Nature
           </h2>
-          <p style={{ fontSize: '15px', color: '#666', fontWeight: 300, lineHeight: 1.75 }}>
-            Each villa and suite is architecturally oriented to capture panoramic views of ocean horizons, verdant botanical hillsides, and starry night skies.
+          <p className="text-sm text-gray-600 font-light leading-relaxed">
+            Elevated suites and private villas nestled between lush organic farmlands and scenic mountain peaks.
           </p>
         </div>
 
-        {/* Room Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '32px' }}>
-          {roomsData.map((room, index) => (
-            <motion.div
-              key={room.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              style={{
-                background: '#F8F8F8',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                border: '1px solid #eeeeee',
-                boxShadow: '0 20px 40px -15px rgba(0,0,0,0.08)',
-                display: 'flex',
-                flexDirection: 'column',
-                transition: 'box-shadow 0.4s ease',
-              }}
-            >
-              {/* Image */}
-              <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                <img
-                  src={room.image}
-                  alt={room.name}
-                  loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease' }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.10)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1.00)'; }}
-                />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%)' }} />
-                <div style={{ position: 'absolute', top: '14px', left: '14px', padding: '4px 14px', borderRadius: '9999px', background: 'rgba(94,123,82,0.88)', color: '#DCE5D7', fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                  {room.category}
-                </div>
-                <div style={{ position: 'absolute', bottom: '14px', right: '14px', background: 'rgba(255,255,255,0.95)', padding: '6px 14px', borderRadius: '9999px', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                  <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '18px', fontWeight: 700, color: '#5E7B52' }}>{room.price}</span>
-                  <span style={{ fontSize: '10px', color: '#888', textTransform: 'uppercase' }}>/ night</span>
-                </div>
-              </div>
-
-              {/* Body */}
-              <div style={{ padding: '24px 28px 28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <div style={{ display: 'flex', gap: '2px', color: '#DCE5D7' }}>
-                      {[...Array(5)].map((_, i) => <FaStar key={i} style={{ fontSize: '11px' }} />)}
-                    </div>
-                    <span style={{ fontSize: '11px', color: '#888' }}>{room.rating} ({room.reviewsCount} reviews)</span>
+        {/* Unique Organic Grid (Horizontal Capsule Cards) */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10"
+        >
+          <AnimatePresence>
+            {roomsData.map((room, index) => (
+              <motion.div
+                layout
+                key={room.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group flex flex-col sm:flex-row items-center sm:items-stretch gap-6 p-4 rounded-[2.5rem] hover:bg-white/60 transition-all duration-500 border border-transparent hover:border-[#E2E8DF] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+              >
+                {/* Arch / Capsule Image */}
+                <div className="relative w-40 h-56 sm:w-48 sm:h-auto flex-shrink-0 overflow-hidden rounded-full shadow-sm group-hover:shadow-md transition-all duration-500">
+                  <img
+                    src={room.image}
+                    alt={room.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  />
+                  {/* Subtle overlay gradient to ensure text readability if we put text on it, but here it's just aesthetic */}
+                  <div className="absolute inset-0 bg-[#5E7B52]/10 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-500" />
+                  
+                  {/* Floating category tag on image */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-[#5E7B52] text-[9px] font-bold tracking-[0.2em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap shadow-xs">
+                    {room.category}
                   </div>
-                  <h3 style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.5rem', fontWeight: 700, color: '#5E7B52', marginBottom: '10px' }}>
+                </div>
+
+                {/* Content Area */}
+                <div className="flex-1 flex flex-col justify-center py-2 text-center sm:text-left">
+                  <div className="flex items-center justify-center sm:justify-start gap-1 text-amber-500 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} className="text-[10px]" />
+                    ))}
+                  </div>
+
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#2D3B27] group-hover:text-[#5E7B52] transition-colors leading-tight mb-2">
                     {room.name}
                   </h3>
-                  <p style={{ fontSize: '13px', color: '#666', fontWeight: 300, lineHeight: 1.7, marginBottom: '20px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  
+                  <div className="font-serif text-lg text-[#5E7B52] font-semibold mb-3">
+                    {room.price} <span className="text-xs text-gray-500 font-sans font-normal lowercase tracking-wide">/ night</span>
+                  </div>
+
+                  <p className="text-xs text-gray-600 font-light line-clamp-2 leading-relaxed mb-4 max-w-sm">
                     {room.description}
                   </p>
 
-                  {/* Specs */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', padding: '12px 0', borderTop: '1px solid #eee', borderBottom: '1px solid #eee', marginBottom: '18px' }}>
-                    {[
-                      { icon: FaRulerCombined, text: room.size },
-                      { icon: FaUsers, text: room.capacity },
-                      { icon: FaBed, text: 'King Bed' },
-                    ].map(({ icon: Icon, text }, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: '#555' }}>
-                        <Icon style={{ color: '#5E7B52', flexShrink: 0 }} />
-                        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{text}</span>
-                      </div>
-                    ))}
+                  {/* Minimalist Specs */}
+                  <div className="flex items-center justify-center sm:justify-start gap-4 text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-5">
+                    <div className="flex items-center gap-1.5">
+                      <FaRulerCombined className="text-[#5E7B52]" />
+                      <span>{room.size}</span>
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-[#DCE5D7]" />
+                    <div className="flex items-center gap-1.5">
+                      <FaUsers className="text-[#5E7B52]" />
+                      <span>{room.capacity}</span>
+                    </div>
                   </div>
 
-                  {/* Amenity Tags */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '22px' }}>
-                    {room.amenities.slice(0, 3).map((a, i) => (
-                      <span key={i} style={{ padding: '4px 10px', borderRadius: '6px', background: '#fff', border: '1px solid #e0e0e0', fontSize: '10px', color: '#555' }}>{a}</span>
-                    ))}
-                    {room.amenities.length > 3 && (
-                      <span style={{ padding: '4px 8px', fontSize: '10px', color: '#DCE5D7', fontWeight: 600 }}>+{room.amenities.length - 3} more</span>
-                    )}
-                  </div>
+                  {/* Elegant CTA */}
+                  <button
+                    onClick={() => setSelectedRoom(room)}
+                    className="inline-flex items-center justify-center sm:justify-start gap-2 text-[#5E7B52] font-semibold text-xs uppercase tracking-widest group-hover:text-[#2D3B27] transition-colors"
+                  >
+                    <span>View Details</span>
+                    <span className="w-8 h-[1px] bg-[#5E7B52] group-hover:w-12 group-hover:bg-[#2D3B27] transition-all duration-300 relative">
+                      <FaArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 text-[8px]" />
+                    </span>
+                  </button>
                 </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-                {/* CTA */}
-                <button
-                  onClick={() => setSelectedRoom(room)}
-                  style={{
-                    width: '100%',
-                    padding: '14px',
-                    borderRadius: '9999px',
-                    background: '#5E7B52',
-                    color: '#DCE5D7',
-                    fontWeight: 700,
-                    fontSize: '12px',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 14px rgba(94,123,82,0.20)',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#DCE5D7'; e.currentTarget.style.color = '#5E7B52'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = '#5E7B52'; e.currentTarget.style.color = '#DCE5D7'; }}
-                >
-                  <span>Explore Villa Details</span>
-                  <FaArrowRight style={{ fontSize: '11px' }} />
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
       <RoomDetailModal room={selectedRoom} onClose={() => setSelectedRoom(null)} />
@@ -150,3 +123,4 @@ const Rooms = () => {
 };
 
 export default Rooms;
+
