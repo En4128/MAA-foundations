@@ -134,7 +134,6 @@ const Gallery = () => {
                   alt={item.title}
                   draggable={false}
                   className="w-full h-full object-cover transition-transform duration-[1300ms] ease-out group-hover:scale-110"
-                  loading="lazy"
                 />
 
                 {/* Bottom gradient */}

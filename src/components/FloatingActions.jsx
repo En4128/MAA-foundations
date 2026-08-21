@@ -48,24 +48,6 @@ const FloatingActions = () => {
           </span>
         </motion.a>
 
-        {/* Floating Call Now Button */}
-        <motion.a
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.95 }}
-          href={`tel:${resortInfo.phone}`}
-          aria-label="Call Now"
-          className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#5E7B52] text-[#DCE5D7] flex items-center justify-center text-xl shadow-2xl border-2 border-[#DCE5D7] cursor-pointer hover:bg-[#DCE5D7] hover:text-[#5E7B52] transition-colors relative group"
-        >
-          <FaPhoneAlt />
-          {/* Tooltip */}
-          <span className="absolute right-16 bg-black/80 text-white text-[11px] font-semibold py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow">
-            Call Direct
-          </span>
-        </motion.a>
-
         {/* Floating Back To Top Button */}
         <AnimatePresence>
           {showBackToTop && (

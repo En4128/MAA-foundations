@@ -44,7 +44,6 @@ const About = () => (
             <img
               src={aboutAerial}
               alt="MAA Foundations Resort Aerial View"
-              loading="lazy"
               style={{ width: '100%', height: '500px', objectFit: 'cover', display: 'block' }}
             />
           </div>
@@ -59,33 +58,12 @@ const About = () => (
             <img
               src={aboutNight}
               alt="MAA Foundations Resort Night View"
-              loading="lazy"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
 
-          {/* Years badge */}
-          <div style={{
-            position: 'absolute', top: '-20px', left: '-20px',
-            background: 'linear-gradient(135deg, #5E7B52, #3E5C35)',
-            padding: '20px 24px', borderRadius: '18px',
-            boxShadow: '0 10px 30px -5px rgba(220,229,215,0.35)',
-            border: '1px solid rgba(220,229,215,0.35)',
-            display: 'flex', alignItems: 'center', gap: '14px',
-          }}>
-            <div style={{
-              width: '48px', height: '48px', borderRadius: '50%',
-              background: '#DCE5D7', color: '#5E7B52',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontWeight: 800, fontSize: '20px', fontFamily: '"Playfair Display", serif',
-            }}>
-              18
-            </div>
-            <div>
-              <p style={{ fontSize: '10px', letterSpacing: '0.2em', color: '#DCE5D7', textTransform: 'uppercase', fontWeight: 700, marginBottom: '3px' }}>Years of Excellence</p>
-              <p style={{ fontFamily: '"Playfair Display", serif', fontSize: '13px', color: '#ffffff' }}>Award-Winning Hospitality</p>
-            </div>
-          </div>
+
+          
         </motion.div>
 
         {/* ── Right: Content ── */}
@@ -97,7 +75,7 @@ const About = () => (
         >
           <div style={S.tag}>
             <div style={S.tagLine} />
-            <span style={S.tagText}>Welcome to Excellence </span>
+            <span style={{ ...S.tagText, color: '#5E7B52' }}>Welcome to Excellence</span>
           </div>
 
           <h2 style={S.headline}>
@@ -125,30 +103,6 @@ const About = () => (
               </div>
             ))}
           </div>
-
-          <a
-            href="#rooms"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '14px 32px',
-              borderRadius: '9999px',
-              background: '#5E7B52',
-              color: '#DCE5D7',
-              fontWeight: 700,
-              fontSize: '12px',
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              boxShadow: '0 8px 20px rgba(94,123,82,0.25)',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#DCE5D7'; e.currentTarget.style.color = '#5E7B52'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#5E7B52'; e.currentTarget.style.color = '#DCE5D7'; }}
-          >
-            Explore Accommodation
-          </a>
         </motion.div>
       </div>
 

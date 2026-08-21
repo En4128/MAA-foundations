@@ -31,7 +31,11 @@
    BASE
    ============================================================ */
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  html, body { overscroll-behavior-x: none; }
   body {
     background-color: #FEFCF8;
     color: #2C2416;
@@ -141,3 +145,47 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-in { animation: fade-in 0.5s ease forwards; }
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   Add class="reveal" (or variant) to any element.
+   JS in main.jsx adds .visible when element enters viewport.
+   ============================================================ */
+
+/* Base hidden state */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-zoom {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal        { transform: translateY(36px); }
+.reveal-left   { transform: translateX(-48px); }
+.reveal-right  { transform: translateX(48px); }
+.reveal-zoom   { transform: scale(0.92); }
+
+/* Visible state — toggled by IntersectionObserver */
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-zoom.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+.delay-100 { transition-delay: 0.10s !important; }
+.delay-200 { transition-delay: 0.20s !important; }
+.delay-300 { transition-delay: 0.30s !important; }
+.delay-400 { transition-delay: 0.40s !important; }
+.delay-500 { transition-delay: 0.50s !important; }
+.delay-600 { transition-delay: 0.60s !important; }
+
+/* Section anchor scroll-margin so the sticky nav doesn't cover headings */
+section[id] { scroll-margin-top: 80px; }
+

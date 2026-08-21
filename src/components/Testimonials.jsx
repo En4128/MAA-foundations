@@ -85,7 +85,6 @@ const Testimonials = () => (
                   <img
                     src={item.image}
                     alt={item.name}
-                    loading="lazy"
                     style={{ width:'48px', height:'48px', borderRadius:'50%', objectFit:'cover', border:'2px solid #5E7B52', boxShadow:'0 4px 12px rgba(94,123,82,0.25)' }}
                   />
                   <div>

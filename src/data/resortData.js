@@ -1,9 +1,17 @@
-import imgDSC2035 from '../assets/DSC_2035.JPG';
-import imgDSC2038 from '../assets/DSC_2038.JPG';
-import imgDSC2047 from '../assets/DSC_2047.JPG';
-import imgDSC2048 from '../assets/DSC_2048.JPG';
-import imgDSC2057 from '../assets/DSC_2057.JPG';
-import imgWhatsapp from '../assets/WhatsApp Image 2026-08-10 at 7.22.48 PM.jpeg';
+const imgDSC2035 = '/gallery/DSC_2035.jpg';
+const imgDSC2038 = '/gallery/DSC_2038.jpg';
+const imgDSC2047 = '/gallery/DSC_2047.jpg';
+const imgDSC2048 = '/gallery/DSC_2048.jpg';
+const imgDSC2057 = '/gallery/DSC_2057.jpg';
+const imgWhatsapp = '/gallery/whatsapp-event.jpeg';
+
+const room101 = '/gallery/room_101.jpg';
+const room102 = '/gallery/room_102.jpg';
+const room103 = '/gallery/room_103.jpg';
+const room104 = '/gallery/room_104.jpg';
+const room201 = '/gallery/room_201.jpg';
+const room202 = '/gallery/room_202.jpg';
+const room203 = '/gallery/room_203.jpg';
 
 export const resortInfo = {
   name: "MAA Resort",
@@ -20,87 +28,179 @@ export const resortInfo = {
 export const statistics = [
   { label: "Happy Guests", value: 25000, suffix: "+", icon: "FaSmileBeam" },
   { label: "Years Experience", value: 18, suffix: " Yrs", icon: "FaAward" },
-  { label: "Luxury Suites", value: 64, suffix: " Villas", icon: "FaHotel" },
+  { label: "Boutique Rooms", value: 7, suffix: " Rooms", icon: "FaHotel" },
   { label: "Positive Reviews", value: 99.4, suffix: "%", icon: "FaStar" },
 ];
 
 export const roomsData = [
+  // Ground Floor (4 Rooms)
   {
     id: 1,
-    name: "Deluxe Ocean Suite",
-    category: "Deluxe",
-    price: "$480",
+    roomNumber: "101",
+    floor: "Ground Floor",
+    floorId: "ground",
+    name: "Garden Serenity Suite",
+    category: "Garden View",
+    price: "₹3,500",
     period: "per night",
     rating: 4.9,
-    reviewsCount: 128,
-    size: "650 sq.ft",
-    capacity: "2 Adults",
-    bed: "King Size Feather Bed",
-    view: "Panoramic Oceanfront",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-    description: "Immerse yourself in gentle sea breezes with floor-to-ceiling glass windows, a private sun terrace, and marble bath with ocean view.",
-    amenities: ["Ocean View", "Private Terrace", "Free Wi-Fi", "Espresso Machine", "Marble Bath", "24h Butler"],
+    reviewsCount: 48,
+    size: "380 sq.ft",
+    capacity: "2 Guests",
+    bed: "King Size Bed",
+    view: "Lush Organic Garden",
+    image: room101,
+    description: "Peaceful ground-floor suite opening directly to manicured lawns and flowering gardens. Features handcrafted wooden furnishings, plush king bed, and morning birdsong.",
+    amenities: ["Direct Garden Access", "King Size Bed", "Free Wi-Fi", "Air Conditioning", "En-suite Bath", "Room Service"],
     gallery: [
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85"
+      room101,
+      imgDSC2047,
+      imgDSC2035
     ]
   },
   {
     id: 2,
-    name: "Executive Horizon Villa",
-    category: "Executive",
-    price: "$750",
+    roomNumber: "102",
+    floor: "Ground Floor",
+    floorId: "ground",
+    name: "Heritage Courtyard Room",
+    category: "Courtyard View",
+    price: "₹3,800",
     period: "per night",
-    rating: 5.0,
-    reviewsCount: 94,
-    size: "950 sq.ft",
-    capacity: "3 Adults",
-    bed: "Super King Bed",
-    view: "Infinity Pool & Horizon",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-    description: "Designed for executive comfort featuring a separate lounge, personal jacuzzi plunge pool, and dedicated private concierge.",
-    amenities: ["Private Pool", "Living Area", "Cocktail Bar", "Walk-in Closet", "High-Speed Wi-Fi", "Airport Transfer"],
+    rating: 4.85,
+    reviewsCount: 36,
+    size: "420 sq.ft",
+    capacity: "2 Adults, 1 Child",
+    bed: "King Bed + Extra Bed",
+    view: "Heritage Stone Courtyard",
+    image: room102,
+    description: "Charming ground floor retreat featuring traditional architectural accents, cool stone flooring, spacious seating area, and soothing courtyard fountain views.",
+    amenities: ["Courtyard View", "Spacious Seating", "High-Speed Wi-Fi", "Smart TV", "Organic Toiletries", "Tea/Coffee Maker"],
     gallery: [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85"
+      room102,
+      imgDSC2038,
+      imgDSC2047
     ]
   },
   {
     id: 3,
-    name: "Garden Sanctuary Villa",
-    category: "Garden View",
-    price: "$560",
+    roomNumber: "103",
+    floor: "Ground Floor",
+    floorId: "ground",
+    name: "Flora Deluxe Sanctuary",
+    category: "Deluxe",
+    price: "₹4,200",
     period: "per night",
-    rating: 4.85,
-    reviewsCount: 110,
-    size: "800 sq.ft",
-    capacity: "2 Adults, 1 Child",
-    bed: "King Bed + Daybed",
-    view: "Botanical Gardens",
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85",
-    description: "Surrounded by rare exotic flora and tranquil water streams, offering complete seclusion and an outdoor rain shower.",
-    amenities: ["Outdoor Rain Shower", "Private Courtyard", "Organic Tea Bar", "Garden Lounge", "Smart Home Automation"],
+    rating: 4.92,
+    reviewsCount: 52,
+    size: "450 sq.ft",
+    capacity: "2-3 Adults",
+    bed: "Super King Bed",
+    view: "Exotic Flora & Farm Trails",
+    image: room103,
+    description: "Surrounded by blooming tropical plants on the ground level, this spacious sanctuary offers complete privacy, a private patio, and direct access to farm walkways.",
+    amenities: ["Private Patio", "Farm Trail Access", "Air Conditioning", "Rain Shower", "Free Wi-Fi", "24h Front Desk"],
     gallery: [
-      "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85"
+      room103,
+      imgDSC2057,
+      imgDSC2047
     ]
   },
   {
     id: 4,
-    name: "Poolside Royal Sanctuary",
-    category: "Pool View",
-    price: "$890",
+    roomNumber: "104",
+    floor: "Ground Floor",
+    floorId: "ground",
+    name: "Poolside Comfort Suite",
+    category: "Pool Access",
+    price: "₹4,500",
     period: "per night",
     rating: 4.95,
-    reviewsCount: 156,
-    size: "1,100 sq.ft",
-    capacity: "4 Guests",
-    bed: "2 Plush King Beds",
-    view: "Lagoon Pool Direct Access",
-    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=85",
-    description: "Step straight from your private cabana deck into our turquoise lagoon pool. Features double vanity bath and complimentary champagne.",
-    amenities: ["Direct Lagoon Access", "Private Sunbeds", "Champagne Service", "Spa Credits Included", "Sound System"],
+    reviewsCount: 64,
+    size: "480 sq.ft",
+    capacity: "2-4 Guests",
+    bed: "2 Queen Beds",
+    view: "Swimming Pool & Palms",
+    image: room104,
+    description: "Step right out to the sparkling pool deck from your ground floor verandah. Perfect for families or friends looking for easy poolside leisure.",
+    amenities: ["Direct Pool Access", "Dual Queen Beds", "Private Sun Deck", "Mini Fridge", "Complimentary Breakfast", "Free Wi-Fi"],
     gallery: [
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=85"
+      room104,
+      imgDSC2047,
+      imgDSC2035
+    ]
+  },
+  // 1st Floor (3 Rooms)
+  {
+    id: 5,
+    roomNumber: "201",
+    floor: "1st Floor",
+    floorId: "first",
+    name: "Mountain Vista Suite",
+    category: "Mountain View",
+    price: "₹4,800",
+    period: "per night",
+    rating: 4.98,
+    reviewsCount: 71,
+    size: "500 sq.ft",
+    capacity: "2 Adults",
+    bed: "Plush King Bed",
+    view: "Panoramic Mountain Peaks",
+    image: room201,
+    description: "Elevated first-floor suite with expansive glass windows framing misty mountain peaks. Wake up to breathtaking sunrise vistas over the hills.",
+    amenities: ["Mountain Horizon View", "Private Balcony", "Air Conditioning", "Espresso Maker", "Luxury Linens", "Free Wi-Fi"],
+    gallery: [
+      room201,
+      imgDSC2035,
+      imgDSC2047
+    ]
+  },
+  {
+    id: 6,
+    roomNumber: "202",
+    floor: "1st Floor",
+    floorId: "first",
+    name: "Sky Terrace Balcony Suite",
+    category: "Balcony Suite",
+    price: "₹5,200",
+    period: "per night",
+    rating: 4.96,
+    reviewsCount: 58,
+    size: "520 sq.ft",
+    capacity: "2-3 Adults",
+    bed: "Super King Bed + Daybed",
+    view: "Resort Canopy & Mountains",
+    image: room202,
+    description: "Perched on the first floor with a generous open-air private balcony overlooking lush resort canopies, farmlands, and mountain horizons.",
+    amenities: ["Private Balcony & Seating", "Super King Bed", "Smart Android TV", "In-room Dining", "Premium Toiletries", "Free Wi-Fi"],
+    gallery: [
+      room202,
+      imgDSC2048,
+      imgDSC2047
+    ]
+  },
+  {
+    id: 7,
+    roomNumber: "203",
+    floor: "1st Floor",
+    floorId: "first",
+    name: "Royal Sunrise Panorama Suite",
+    category: "Executive Suite",
+    price: "₹5,800",
+    period: "per night",
+    rating: 5.0,
+    reviewsCount: 84,
+    size: "560 sq.ft",
+    capacity: "2-4 Guests",
+    bed: "Royal King Bed + Sofa Bed",
+    view: "180° Valley & Sunrise View",
+    image: room203,
+    description: "Our premier first-floor corner suite offering unhindered 180-degree panoramic views of the morning sunrise, valley greenery, and mountain slopes.",
+    amenities: ["180° Panoramic View", "Corner Balcony", "Separate Lounge Area", "Bathtub & Rain Shower", "Welcome Fruit Basket", "24/7 Butler Support"],
+    gallery: [
+      room203,
+      imgDSC2047,
+      imgDSC2057
     ]
   }
 ];
@@ -131,29 +231,6 @@ export const diningData = {
       desc: "A relaxed spot for a cold drink, a glass of wine, or a small plate — day or night.",
       timing: "5:00 PM – 1:00 AM"
     }
-  ],
-  specialties: [
-    {
-      title: "Grilled Fish of the Day",
-      category: "Chef's Pick",
-      price: "₹680",
-      desc: "Fresh catch from the morning, grilled with herbs and served with rice and salad.",
-      image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=85"
-    },
-    {
-      title: "Farm Chicken Curry",
-      category: "House Special",
-      price: "₹420",
-      desc: "Slow-cooked chicken in a rich, homestyle curry. Best enjoyed with fresh-baked bread.",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85"
-    },
-    {
-      title: "Seasonal Fruit Dessert",
-      category: "Dessert",
-      price: "₹220",
-      desc: "A light dessert made with whatever fruit is ripe from the farm that day.",
-      image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85"
-    }
   ]
 };
 
@@ -162,13 +239,13 @@ export const amenitiesData = [
     id: 1,
     icon: "FaWifi",
     title: "Free Wi-Fi Everywhere",
-    description: "Stay connected without thinking about it. Fast, reliable Wi-Fi works throughout your room, the pool area, the gardens — everywhere you go."
+    description: "Stay connected without thinking about it. Fast, reliable Wi-Fi works throughout your room, the pool area, the gardens  everywhere you go."
   },
   {
     id: 2,
     icon: "FaSwimmingPool",
     title: "Heated Infinity Pool",
-    description: "Take a dip any time of day. Our warm infinity pools blend right into the horizon — perfect for a morning swim or a relaxing evening float."
+    description: "Take a dip any time of day. Our warm infinity pools blend right into the horizon perfect for a morning swim or a relaxing evening float."
   },
   {
     id: 3,
@@ -180,7 +257,7 @@ export const amenitiesData = [
     id: 4,
     icon: "FaUtensils",
     title: "On-Site Restaurants",
-    description: "Hungry? We've got you covered. Enjoy a sit-down meal at our restaurant or order food straight to your room — good food, whenever you want it."
+    description: "Hungry? We've got you covered. Enjoy a sit-down meal at our restaurant or order food straight to your room good food, whenever you want it."
   },
   {
     id: 5,
@@ -192,13 +269,13 @@ export const amenitiesData = [
     id: 6,
     icon: "FaChild",
     title: "Fun Zone for Kids",
-    description: "Kids will love it here. There's a safe, supervised play area with games, activities, and splash pads — so little ones have a great time too."
+    description: "Kids will love it here. There's a safe, supervised play area with games, activities, and splash pads so little ones have a great time too."
   },
   {
     id: 7,
     icon: "FaSnowflake",
     title: "Room Climate Control",
-    description: "Too warm? Too cold? No problem. Adjust the temperature in your room exactly how you like it — your comfort is completely in your hands."
+    description: "Too warm? Too cold? No problem. Adjust the temperature in your room exactly how you like it your comfort is completely in your hands."
   },
   {
     id: 8,
