@@ -288,31 +288,39 @@ export const amenitiesData = [
 export const eventsData = [
   {
     id: 1,
-    title: "Royal Ocean Weddings",
-    category: "Weddings",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85",
-    description: "Say your vows against dramatic ocean horizons on our glass wedding pier with dedicated floral stylists and luxury catering."
+    title: "Birthday Party Hall",
+    category: "Birthday",
+    badge: "BIRTHDAY",
+    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=85",
+    description: "Make your birthday special in our dedicated party hall. Bright, cheerful setup with space for decorations, a cake table, music, and all your guests.",
+    icon: "FaGlassCheers"
   },
   {
     id: 2,
-    title: "Gala Celebrations & Birthdays",
-    category: "Parties",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=85",
-    description: "Host milestone anniversaries and grand parties with live orchestra performances, custom pyrotechnics, and bespoke menus."
+    title: "Office Meeting Hall",
+    category: "Office Meetings",
+    badge: "OFFICE MEETINGS",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=85",
+    description: "A clean and professional hall for your office meetings, presentations, and team discussions. Equipped with projector, good seating, and a quiet environment.",
+    icon: "FaBriefcase"
   },
   {
     id: 3,
-    title: "Executive Corporate Retreats",
-    category: "Business",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=85",
-    description: "High-level board meetings in state-of-the-art amphitheaters combined with golf outings and team wellness workshops."
+    title: "Family Reunion Hall",
+    category: "Family Reunion",
+    badge: "FAMILY REUNION",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85",
+    description: "Bring the whole family together under one roof. A spacious and comfortable hall where everyone — from kids to grandparents — can enjoy the day together.",
+    icon: "FaUsers"
   },
   {
     id: 4,
-    title: "Private Family Reunions",
-    category: "Family Functions",
-    image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85",
-    description: "Reserve an entire villa wing for unforgettable multi-generational family reunions with private beach BBQs."
+    title: "Small Party Hall",
+    category: "Small Events",
+    badge: "SMALL EVENTS",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=85",
+    description: "Planning a small celebration? Our cozy party hall is just right for intimate gatherings, get-togethers, and casual parties with close friends and family.",
+    icon: "FaCocktail"
   }
 ];
 
